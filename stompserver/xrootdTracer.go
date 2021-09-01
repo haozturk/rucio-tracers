@@ -224,24 +224,15 @@ func xrtdServer() {
 	var ts uint64
 	var restartSrv uint
 	smgr := initStomp(Config.EndpointConsumer, Config.StompURIConsumer)
-	// get subscriptions
-	subs, err := subscribeAll(smgr)
-	if err != nil {
-		log.Println(err)
-		subs, err = subscribeAll(smgr)
-		if err != nil {
-			log.Fatalf("Unable to subscribe to all the brokers, fatal error!\n")
-		}
-	}
 	// ch for all the listeners to write to
 	ch := make(chan *stomp.Message)
 	// defer close executed when the main function is about to exit.
 	// In this way the channel is to be closed and no resources taken.
 	defer close(ch)
-	for i, sub := range subs {
-		go listener(smgr, sub, ch, i)
-
+	for _, addr := range smgr.Addresses {
+		go listener(smgr, addr, ch)
 	}
+	//
 	for {
 		// get stomp messages from ch
 		select {
@@ -264,9 +255,9 @@ func xrtdServer() {
 				atomic.StoreUint64(&tc, 0)
 				t2 = time.Now().Unix() - t1
 				t1 = time.Now().Unix()
-				log.Printf("Processing 1000 messages while total received %d messages.\n", atomic.LoadUint64(&Receivedperk_swpop))
+				log.Printf("Processing 1000 messages while total received %d messages.\n", atomic.LoadUint64(&Receivedperk_xrtd))
 				log.Printf("Processing 1000 messages took %d seconds.\n", t2)
-				atomic.StoreUint64(&Receivedperk_swpop, 0)
+				atomic.StoreUint64(&Receivedperk_xrtd, 0)
 			}
 			if err != nil && err.Error() != "Empty message" {
 				log.Println("xrootd/aaa message processing error", err)
