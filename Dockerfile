@@ -26,6 +26,7 @@ COPY --from=go-builder /data/RucioTracers/stompserver/RucioTracer /data/
 RUN mkdir -p /data/run && mkdir -p /data/etc
 COPY --from=go-builder /data/RucioTracers/run.sh /data/run/
 COPY --from=go-builder /data/RucioTracers/run-swpop.sh /data/run/
+COPY --from=go-builder /data/RucioTracers/run-xrootd.sh /data/run/
 COPY --from=go-builder /data/RucioTracers/etc/ruciositemap.json /data/etc/
 COPY --from=go-builder /data/RucioTracers/etc/domainsitemap.txt /data/etc/
 RUN chmod +x /data/run/*
