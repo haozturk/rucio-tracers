@@ -19,6 +19,7 @@ import (
 	lbstomp "github.com/vkuznet/lb-stomp"
 	// prometheus apis
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	// prometheus apis
 )
 
 // stompMgr defines the stomp manager for the producer.
@@ -64,7 +65,7 @@ func main() {
 	if Config.Producer == "wmarchive" {
 		fwjrServer()
 	} else if Config.Producer == "cmsswpop" {
-		swpopServer()
+		traceServer("swpop")
 	} else if Config.Producer == "xrootd" {
 		xrtdServer()
 	} else {
