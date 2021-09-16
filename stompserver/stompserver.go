@@ -67,7 +67,7 @@ func main() {
 	} else if Config.Producer == "cmsswpop" {
 		traceServer("swpop")
 	} else if Config.Producer == "xrootd" {
-		xrtdServer()
+		traceServer("xrtd")
 	} else {
 		log.Fatalln("No trace system defined. Check server configuration.")
 	}
