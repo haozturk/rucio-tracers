@@ -77,9 +77,6 @@ type FWJRRecord struct {
 	Steps         []Step   `json:"steps"`
 }
 
-// stompMgr defines the stomp manager for the producer.
-//var stompMgr *lbstomp.StompManager
-
 // FWJRconsumer Consumes for FWJR/WMArchive topic
 func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error) {
 	//first to check to make sure there is something in msg,
@@ -89,10 +86,12 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error) 
 	//
 	var lfnsite []Lfnsite
 	var ls Lfnsite
-	Received.Inc()
+	//
 	atomic.AddUint64(&Receivedperk, 1)
 	if msg == nil || msg.Body == nil {
 		return lfnsite, 0, "", "", errors.New("Empty message")
+	} else {
+		Received.Inc()
 	}
 	//
 	if Config.Verbose > 2 {
@@ -212,15 +211,9 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 }
 
 // server gets messages from consumer AMQ end pointer, make tracers and send to AMQ producer end point.
-func fwjrServer() {
+/* func fwjrServer() {
 	log.Println("Stomp broker URL: ", Config.StompURIConsumer)
-	// get connection
-	smgr := initStomp(Config.EndpointConsumer, Config.StompURIConsumer)
-	sub, err := subscribe(smgr)
-	if err != nil {
-		log.Println(err)
-	}
-
+	//
 	err2 := parseSitemap(fsitemap)
 	if err2 != nil {
 		log.Fatalf("Unable to parse rucio sitemap file %s, error: %v", fsitemap, err2)
@@ -231,27 +224,23 @@ func fwjrServer() {
 	var t2 int64
 	var ts uint64
 	var restartSrv uint
-
+	//
+	smgr := initStomp(Config.EndpointConsumer, Config.StompURIConsumer)
+	// ch for all the listeners to write to
+	ch := make(chan *stomp.Message)
+	// defer close executed when the main function is about to exit.
+	// In this way the channel is to be closed and no resources taken.
+	defer close(ch)
+	for _, addr := range smgr.Addresses {
+		go listener(smgr, addr, ch)
+	}
+	//
 	for {
-		// check first if subscription is still valid, otherwise get a new one
-		if sub == nil {
-			time.Sleep(time.Duration(Config.Interval) * time.Second)
-			sub, err = subscribe(smgr)
-			if err != nil {
-				log.Println("unable to get new subscription", err)
-				continue
-			}
-		}
-		// get stomp messages from subscriber channel
+		// get stomp messages from ch
 		select {
-		case msg := <-sub.C:
+		case msg := <-ch:
 			restartSrv = 0
 			if msg.Err != nil {
-				log.Println("receive error message", msg.Err)
-				sub, err = subscribe(smgr)
-				if err != nil {
-					log.Println("unable to subscribe to", Config.EndpointConsumer, err)
-				}
 				break
 			}
 			// process stomp messages
@@ -263,7 +252,7 @@ func fwjrServer() {
 					log.Println("The number of traces processed in 1000 group: ", atomic.LoadUint64(&tc))
 				}
 			}
-
+			//
 			if atomic.LoadUint64(&tc) == 1000 {
 				atomic.StoreUint64(&tc, 0)
 				t2 = time.Now().Unix() - t1
@@ -296,4 +285,4 @@ func fwjrServer() {
 			atomic.AddUint64(&ts, 1)
 		}
 	}
-}
+} */
