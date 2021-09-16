@@ -62,6 +62,7 @@ var domainRSEMap2 []DomainRSE
 var Receivedperk_xrtd uint64
 
 // xrtdConsumer consumes for aaa/xrtood topic
+// We may use a general Consumer for both xrootd and cmsswpop
 func xrtdConsumer(msg *stomp.Message) (string, []string, string, string, int64, string, error) {
 	//first to check to make sure there is something in msg,
 	//otherwise we will get error.
