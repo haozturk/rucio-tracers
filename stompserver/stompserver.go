@@ -19,7 +19,6 @@ import (
 	lbstomp "github.com/vkuznet/lb-stomp"
 	// prometheus apis
 	"github.com/prometheus/client_golang/prometheus/promhttp"
-	// prometheus apis
 )
 
 // stompMgr defines the stomp manager for the producer.
@@ -63,7 +62,8 @@ func main() {
 	go httpServer(fmt.Sprintf(":%d", Config.Port))
 	// start AMQ server to handle rucio traces
 	if Config.Producer == "wmarchive" {
-		fwjrServer()
+		//fwjrServer()
+		traceServer("fwjr")
 	} else if Config.Producer == "cmsswpop" {
 		traceServer("swpop")
 	} else if Config.Producer == "xrootd" {

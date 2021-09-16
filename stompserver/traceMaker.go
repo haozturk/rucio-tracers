@@ -57,6 +57,18 @@ var (
 		Name: "rucio_tracer_swpop_traces",
 		Help: "The number of traces messages os swpop",
 	})
+	Received_xrtd = promauto.NewCounter(prometheus.CounterOpts{
+		Name: "rucio_tracer_xrootd_received",
+		Help: "The number of received messages",
+	})
+	Send_xrtd = promauto.NewCounter(prometheus.CounterOpts{
+		Name: "rucio_tracer_xrootd_send",
+		Help: "The number of send messages",
+	})
+	Traces_xrtd = promauto.NewCounter(prometheus.CounterOpts{
+		Name: "rucio_tracer_xrootd_traces",
+		Help: "The number of traces messages",
+	})
 )
 var Receivedperk_2 uint64
 
@@ -191,7 +203,7 @@ func traceSender(msg *stomp.Message, topic string) ([]string, error) {
 		if Config.Verbose > 2 {
 			log.Printf("********* Rucio trace record from %s ***************\n", topic)
 			log.Println("\n" + string(data))
-			log.Println("\n******** Done Rucio trace record from %s *************\n", topic)
+			log.Printf("\n******** Done Rucio trace record from %s *************\n", topic)
 		}
 		// send data to Stomp endpoint
 		if Config.EndpointProducer != "" {
@@ -236,6 +248,8 @@ func traceServer(topic string) {
 	var t2 int64
 	var ts uint64
 	var restartSrv uint
+	var dids []string
+	var err error
 	smgr := initStomp(Config.EndpointConsumer, Config.StompURIConsumer)
 	// ch for all the listeners to write to
 	ch := make(chan *stomp.Message)
@@ -255,9 +269,15 @@ func traceServer(topic string) {
 				break
 			}
 			// process stomp messages
-			dids, err := traceSender(msg, topic)
+			if topic == "fwjr" {
+				dids, err = FWJRtrace(msg)
+			} else {
+				dids, err = traceSender(msg, topic)
+			}
 			if err == nil {
-				if topic == "xrtd" {
+				if topic == "fwjr" {
+					Traces.Inc()
+				} else if topic == "xrtd" {
 					Traces_xrtd.Inc()
 				} else if topic == "swpop" {
 					Traces_swpop.Inc()
@@ -274,9 +294,14 @@ func traceServer(topic string) {
 				atomic.StoreUint64(&tc, 0)
 				t2 = time.Now().Unix() - t1
 				t1 = time.Now().Unix()
-				log.Printf("Processing 1000 %s messages while total received %d messages.\n", topic, atomic.LoadUint64(&Receivedperk_2))
+				if topic == "fwjr" {
+					log.Printf("Processing 1000 %s messages while total received %d messages.\n", topic, atomic.LoadUint64(&Receivedperk))
+					atomic.StoreUint64(&Receivedperk, 0)
+				} else {
+					log.Printf("Processing 1000 %s messages while total received %d messages.\n", topic, atomic.LoadUint64(&Receivedperk_2))
+					atomic.StoreUint64(&Receivedperk_2, 0)
+				}
 				log.Printf("Processing 1000 messages took %d seconds.\n", t2)
-				atomic.StoreUint64(&Receivedperk_2, 0)
 			}
 			if err != nil && err.Error() != "Empty message" {
 				log.Printf("\n %s message processing error: %v\n", topic, err)
@@ -295,7 +320,7 @@ func traceServer(topic string) {
 			restartSrv += 1
 			if atomic.LoadUint64(&ts) == 10000 {
 				atomic.StoreUint64(&ts, 0)
-				if Config.Verbose > 3 {
+				if Config.Verbose > 0 {
 					log.Println("waiting for 10000x", sleep)
 				}
 			}
