@@ -47,6 +47,10 @@ func NewTrace(lfn string, site string, ts int64, jobtype string, wnname string, 
 	if usrdn == "" {
 		usrdn = "unknown"
 	}
+	// some of the ts is using milliseconds , such as xrootd data. We fix here to avoid going to each data source
+	if ts > 1000000000000 {
+		ts = ts / 1000
+	}
 	trc := Trace{
 		Account:            account,
 		ClientState:        "DONE",
