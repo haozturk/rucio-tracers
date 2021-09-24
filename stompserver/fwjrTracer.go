@@ -191,6 +191,8 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 					log.Println("\n", string(data))
 					log.Println("******** Done Rucio trace record *************")
 				}
+				// a good trace made
+				Traces.Inc()
 				// send data to Stomp endpoint
 				if Config.EndpointProducer != "" {
 					err := stompMgr.Send(data, stomp.SendOpt.Header("appversion", "fwjrAMQ"))

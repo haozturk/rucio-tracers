@@ -199,11 +199,20 @@ func traceSender(msg *stomp.Message, topic string) ([]string, error) {
 				log.Printf("Unable to marshal back to JSON string, error: %v \n", err)
 			}
 			dids = append(dids, fmt.Sprintf("%v", trc.DID))
+			continue
 		}
 		if Config.Verbose > 2 {
 			log.Printf("********* Rucio trace record from %s ***************\n", topic)
 			log.Println("\n" + string(data))
 			log.Printf("\n******** Done Rucio trace record from %s *************\n", topic)
+		}
+		// a good trace made
+		if topic == "xrtd" {
+			Traces_xrtd.Inc()
+		} else if topic == "swpop" {
+			Traces_swpop.Inc()
+		} else {
+			log.Fatalf(" Topic %s is not supported. \n", topic)
 		}
 		// send data to Stomp endpoint
 		if Config.EndpointProducer != "" {
@@ -275,18 +284,9 @@ func traceServer(topic string) {
 				dids, err = traceSender(msg, topic)
 			}
 			if err == nil {
-				if topic == "fwjr" {
-					Traces.Inc()
-				} else if topic == "xrtd" {
-					Traces_xrtd.Inc()
-				} else if topic == "swpop" {
-					Traces_swpop.Inc()
-				} else {
-					log.Fatalf(" Topic %s is not supported. \n", topic)
-				}
 				atomic.AddUint64(&tc, 1)
 				if Config.Verbose > 1 {
-					log.Println("The number of traces processed in 1000 group: ", atomic.LoadUint64(&tc))
+					log.Println("The number of messages processed in 1000 group: ", atomic.LoadUint64(&tc))
 				}
 			}
 
