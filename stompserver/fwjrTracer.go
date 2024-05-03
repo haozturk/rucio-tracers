@@ -15,6 +15,7 @@ import (
 	"log"
 	"sync/atomic"
 	"time"
+	"os"
 
 	// stomp library
 	"github.com/go-stomp/stomp"
@@ -163,6 +164,20 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 	var dids []string
 	//get trace data
 	lfnsite, ts, jobtype, wnname, err := FWJRconsumer(msg)
+	log.Println("One message received:")
+	log.Println("lfnsite")
+	log.Println(string(lfnsite))
+	log.Println("ts")
+	log.Println(string(ts))
+	log.Println("jobtype")
+	log.Println(string(jobtype))
+	log.Println("wnname")
+	log.Println(string(wnname))
+	log.Println("err")
+	log.Println(string(err))
+	os.Exit(3)
+
+
 	if err != nil {
 		log.Println("Bad FWJR message.")
 		return nil, errors.New("Bad FWJR message")
