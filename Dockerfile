@@ -17,8 +17,9 @@ ENV GOPATH=/data/gopath
 ARG CGO_ENABLED=0
 # build Rucio tracer
 WORKDIR ${WDIR} 
-RUN git clone https://github.com/dmwm/rucio-tracers.git RucioTracers
+RUN git clone https://github.com/haozturk/rucio-tracers.git RucioTracers
 WORKDIR ${WDIR}/RucioTracers/stompserver
+RUN git checkout cmsrucio-691-fix
 RUN make
 FROM alpine
 # when COPY, need full path, ${WDIR}/RucioTracers/stompserver/RucioTracer will nor wor, WHY?
