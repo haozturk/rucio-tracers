@@ -175,7 +175,7 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 	fmt.Println(string(wnname))
 	fmt.Println("err")
 	fmt.Println(err)	
-	os.Exit(3)
+	
 
 
 	if err != nil {
@@ -201,7 +201,7 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 					dids = append(dids, fmt.Sprintf("%v", trc.DID))
 					continue
 				}
-				if Config.Verbose > 2 {
+				if Config.Verbose == 2 {
 					log.Println("********* Rucio trace record ***************")
 					log.Println("\n", string(data))
 					log.Println("******** Done Rucio trace record *************")
@@ -224,6 +224,7 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 			}
 		}
 	}
+	os.Exit(3)
 	return dids, nil
 }
 
