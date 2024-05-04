@@ -176,9 +176,10 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 		fmt.Println(string(wnname))
 		fmt.Println("err")
 		fmt.Println(err)	
-	} else{
-		fmt.Println("Skipping this file since, its error is null")
 		os.Exit(3)
+	} else{
+		fmt.Println("Skipping these files since, its error is null")
+		fmt.Println(lfnsite)
 	}
 
 	
