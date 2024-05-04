@@ -174,7 +174,7 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 	log.Println("wnname")
 	log.Println(string(wnname))
 	log.Println("err")
-	log.Println(string(err))
+	log.Println(err)
 	os.Exit(3)
 
 
