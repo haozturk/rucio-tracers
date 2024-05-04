@@ -166,7 +166,7 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 	lfnsite, ts, jobtype, wnname, err := FWJRconsumer(msg)
 	log.Println("One message received:")
 	log.Println("lfnsite")
-	log.Println(string(lfnsite))
+	log.Println(lfnsite)
 	log.Println("ts")
 	log.Println(string(ts))
 	log.Println("jobtype")

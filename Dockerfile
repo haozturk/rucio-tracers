@@ -18,6 +18,7 @@ ARG CGO_ENABLED=0
 # build Rucio tracer
 WORKDIR ${WDIR} 
 RUN git clone https://github.com/haozturk/rucio-tracers.git RucioTracers
+#COPY ./* RucioTracers
 WORKDIR ${WDIR}/RucioTracers/stompserver
 RUN git checkout cmsrucio-691-fix
 RUN make

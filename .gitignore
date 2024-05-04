@@ -21,3 +21,6 @@
 
 # vsc workspaces
 *.code-workspace
+
+# Helper scripts
+*.git_all.sh
