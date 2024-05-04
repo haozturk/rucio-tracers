@@ -208,7 +208,7 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 					dids = append(dids, fmt.Sprintf("%v", trc.DID))
 					continue
 				}
-				if Config.Verbose == 2 {
+				if Config.Verbose > 2 {
 					log.Println("********* Rucio trace record ***************")
 					log.Println("\n", string(data))
 					log.Println("******** Done Rucio trace record *************")
