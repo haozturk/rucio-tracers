@@ -164,6 +164,7 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 	var dids []string
 	//get trace data
 	lfnsite, ts, jobtype, wnname, err := FWJRconsumer(msg)
+	"""
 	log.Println("One message received:")
 	log.Println("lfnsite")
 	log.Println(lfnsite)
@@ -175,6 +176,18 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 	log.Println(string(wnname))
 	log.Println("err")
 	log.Println(err)
+	"""
+	fmt.Print("One message received:")
+	fmt.Print("lfnsite")
+	fmt.Print(lfnsite)
+	fmt.Print("ts")
+	fmt.Print(string(ts))
+	fmt.Print("jobtype")
+	fmt.Print(string(jobtype))
+	fmt.Print("wnname")
+	fmt.Print(string(wnname))
+	fmt.Print("err")
+	fmt.Print(err)	
 	os.Exit(3)
 
 
