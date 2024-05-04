@@ -164,17 +164,24 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 	var dids []string
 	//get trace data
 	lfnsite, ts, jobtype, wnname, err := FWJRconsumer(msg)
-	fmt.Println("One message received:")
-	fmt.Println("lfnsite")
-	fmt.Println(lfnsite)
-	fmt.Println("ts")
-	fmt.Println(ts)
-	fmt.Println("jobtype")
-	fmt.Println(string(jobtype))
-	fmt.Println("wnname")
-	fmt.Println(string(wnname))
-	fmt.Println("err")
-	fmt.Println(err)	
+	if err != nil {
+		fmt.Println("One message received:")
+		fmt.Println("lfnsite")
+		fmt.Println(lfnsite)
+		fmt.Println("ts")
+		fmt.Println(ts)
+		fmt.Println("jobtype")
+		fmt.Println(string(jobtype))
+		fmt.Println("wnname")
+		fmt.Println(string(wnname))
+		fmt.Println("err")
+		fmt.Println(err)	
+	}
+	else{
+		fmt.Println("Skipping this file since, its error is null")
+		os.Exit(3)
+	}
+
 	
 
 
@@ -224,7 +231,6 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 			}
 		}
 	}
-	os.Exit(3)
 	return dids, nil
 }
 
