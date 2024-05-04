@@ -168,7 +168,7 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 	fmt.Println("lfnsite")
 	fmt.Println(lfnsite)
 	fmt.Println("ts")
-	fmt.Println(string(ts))
+	fmt.Println(ts)
 	fmt.Println("jobtype")
 	fmt.Println(string(jobtype))
 	fmt.Println("wnname")
