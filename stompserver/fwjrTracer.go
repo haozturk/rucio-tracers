@@ -63,10 +63,18 @@ type InputLst struct {
 	GUID   string `json:"guid"`
 }
 
+// ErrorLst defines errors structure of FWJR record.
+type ErrorLst struct {
+	Details    string    `json:"details"`
+	Exitcode int64  `json:"exitCode"`
+	Type   string `json:"type"`
+}
+
 // Step defines step structure of FWJR record.
 type Step struct {
 	Input []InputLst `json:"input"`
 	Site  string     `json:"site"`
+	Errors []ErrorLst `json:"errors"`
 }
 
 // FWJRRecord defines fwjr record structure.
@@ -79,7 +87,7 @@ type FWJRRecord struct {
 }
 
 // FWJRconsumer Consumes for FWJR/WMArchive topic
-func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error) {
+func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, string, string) {
 	//first to check to make sure there is something in msg,
 	//otherwise we will get error:
 	//Failed to continue - runtime error: invalid memory address or nil pointer dereference
@@ -158,7 +166,7 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error) 
 		}
 
 		// Get the error message
-		for _, i := range v.errors {
+		for _, i := range v.Errors {
 			fmt.Print("Exitcode: ")
 			fmt.Println(i.exitCode)
 			fmt.Print("Details: ")
