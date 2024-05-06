@@ -190,7 +190,8 @@ func traceSender(msg *stomp.Message, topic string) ([]string, error) {
 		return nil, errors.New(fmt.Sprintf("Bad %s message", topic))
 	}
 	for _, s := range sitename {
-		trc := NewTrace(lfn, s, ts, jobtype, wnname, topic, usrdn)
+		// TODO: Check what the err has inside
+		trc := NewTrace(lfn, s, ts, jobtype, wnname, topic, usrdn, err)
 		data, err := json.Marshal(trc)
 		if err != nil {
 			if Config.Verbose > 1 {
