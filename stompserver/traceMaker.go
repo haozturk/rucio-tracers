@@ -191,7 +191,8 @@ func traceSender(msg *stomp.Message, topic string) ([]string, error) {
 	}
 	for _, s := range sitename {
 		// gridJobErrorMessage is relevant only for fwjr/wmarchive traces
-		var gridJobErrorMessage = nil
+		// TODO: Check again
+		var gridJobErrorMessage = ""
 		trc := NewTrace(lfn, s, ts, jobtype, wnname, topic, usrdn, gridJobErrorMessage)
 		data, err := json.Marshal(trc)
 		if err != nil {
