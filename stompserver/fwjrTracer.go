@@ -116,6 +116,7 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error) 
 	var ts int64
 	var jobtype string
 	var wnname string
+	var gridJobErrorMessage string
 	// Check the data
 	if rec.Metadata.Ts == 0 {
 		ts = time.Now().Unix()
@@ -155,16 +156,26 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error) 
 			ls.lfn = goodlfn
 			lfnsite = append(lfnsite, ls)
 		}
+
+		// Get the error message
+		for _, i := range v.errors {
+			fmt.Print("Exitcode: ")
+			fmt.Println(i.exitCode)
+			fmt.Print("Details: ")
+			fmt.Println(i.details)
+			gridJobErrorMessage = i.details
+		}
+
 	}
-	return lfnsite, ts, jobtype, wnname, nil
+	return lfnsite, ts, jobtype, wnname, nil, gridJobErrorMessage
 }
 
 // FWJRtrace makes FWJR trace and send it to rucio endpoint
 func FWJRtrace(msg *stomp.Message) ([]string, error) {
 	var dids []string
 	//get trace data
-	lfnsite, ts, jobtype, wnname, err := FWJRconsumer(msg)
-	if err != nil {
+	lfnsite, ts, jobtype, wnname, err, gridJobErrorMessage := FWJRconsumer(msg)
+	if gridJobErrorMessage != nil && err != nil {
 		fmt.Println("One message received:")
 		fmt.Println("lfnsite")
 		fmt.Println(lfnsite)
@@ -174,8 +185,8 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 		fmt.Println(string(jobtype))
 		fmt.Println("wnname")
 		fmt.Println(string(wnname))
-		fmt.Println("err")
-		fmt.Println(err)	
+		fmt.Println("gridJobErrorMessage")
+		fmt.Println(gridJobErrorMessage)	
 		os.Exit(3)
 	} else{
 		fmt.Println("Skipping these files since, its error is null")
@@ -199,7 +210,7 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 				site = s
 			}
 			for _, glfn := range goodlfn {
-				trc := NewTrace(glfn, site, ts, jobtype, wnname, "fwjr", "unknown", err)
+				trc := NewTrace(glfn, site, ts, jobtype, wnname, "fwjr", "unknown", err, gridJobErrorMessage)
 				data, err := json.Marshal(trc)
 				if err != nil {
 					if Config.Verbose > 0 {

@@ -42,7 +42,7 @@ type Trace struct {
 }
 
 // NewTrace creates a new instance of Rucio Trace.
-func NewTrace(lfn string, site string, ts int64, jobtype string, wnname string, account string, usrdn string, err string) Trace {
+func NewTrace(lfn string, site string, ts int64, jobtype string, wnname string, account string, usrdn string, gridJobErrorMessage string) Trace {
 	if account == "" {
 		account = "fwjr"
 	}
@@ -68,7 +68,7 @@ func NewTrace(lfn string, site string, ts int64, jobtype string, wnname string, 
 		Usrdn:              usrdn,
 		Jobtype:            jobtype,
 		Wnname:             wnname,
-		StateReason:        err,
+		StateReason:        gridJobErrorMessage,
 	}
 	return trc
 }
