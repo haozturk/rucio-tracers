@@ -180,6 +180,8 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 	} else{
 		fmt.Println("Skipping these files since, its error is null")
 		fmt.Println(lfnsite)
+		// Exiting to be safe
+		//os.Exit(3)
 	}
 
 	
@@ -197,7 +199,7 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 				site = s
 			}
 			for _, glfn := range goodlfn {
-				trc := NewTrace(glfn, site, ts, jobtype, wnname, "fwjr", "unknown")
+				trc := NewTrace(glfn, site, ts, jobtype, wnname, "fwjr", "unknown", err)
 				data, err := json.Marshal(trc)
 				if err != nil {
 					if Config.Verbose > 0 {
@@ -208,7 +210,7 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 					dids = append(dids, fmt.Sprintf("%v", trc.DID))
 					continue
 				}
-				if Config.Verbose > 2 {
+				if Config.Verbose == 2 {
 					log.Println("********* Rucio trace record ***************")
 					log.Println("\n", string(data))
 					log.Println("******** Done Rucio trace record *************")

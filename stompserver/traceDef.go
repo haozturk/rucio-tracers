@@ -37,10 +37,12 @@ type Trace struct {
 	Timestamp int64 `json:"timestamp"`
 	// TraceTimeentryUnix defines when the trace was enteried, same as FileReadts.
 	TraceTimeentryUnix int64 `json:"traceTimeentryUnix"`
+	// StateReason stores the error message if any
+	StateReason string `json:"stateReason"`
 }
 
 // NewTrace creates a new instance of Rucio Trace.
-func NewTrace(lfn string, site string, ts int64, jobtype string, wnname string, account string, usrdn string) Trace {
+func NewTrace(lfn string, site string, ts int64, jobtype string, wnname string, account string, usrdn string, err string) Trace {
 	if account == "" {
 		account = "fwjr"
 	}
@@ -66,6 +68,7 @@ func NewTrace(lfn string, site string, ts int64, jobtype string, wnname string, 
 		Usrdn:              usrdn,
 		Jobtype:            jobtype,
 		Wnname:             wnname,
+		StateReason:        err,
 	}
 	return trc
 }
