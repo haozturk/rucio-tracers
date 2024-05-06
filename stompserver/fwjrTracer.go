@@ -87,7 +87,7 @@ type FWJRRecord struct {
 }
 
 // FWJRconsumer Consumes for FWJR/WMArchive topic
-func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, string, string) {
+func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, string) {
 	//first to check to make sure there is something in msg,
 	//otherwise we will get error:
 	//Failed to continue - runtime error: invalid memory address or nil pointer dereference
@@ -98,7 +98,7 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, string,
 	//
 	atomic.AddUint64(&Receivedperk, 1)
 	if msg == nil || msg.Body == nil {
-		return lfnsite, 0, "", "", errors.New("Empty message")
+		return lfnsite, 0, "", "", errors.New("Empty message"), ""
 	} else {
 		Received.Inc()
 	}
@@ -113,7 +113,7 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, string,
 	err := json.Unmarshal(msg.Body, &rec)
 	if err != nil {
 		log.Printf("Enable to Unmarchal input message. Error: %v", err)
-		return lfnsite, 0, "", "", err
+		return lfnsite, 0, "", "", err, ""
 	}
 	if Config.Verbose > 2 {
 		log.Println("******Parsed FWJR record****** ")
@@ -168,10 +168,10 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, string,
 		// Get the error message
 		for _, i := range v.Errors {
 			fmt.Print("Exitcode: ")
-			fmt.Println(i.exitCode)
+			fmt.Println(i.Exitcode)
 			fmt.Print("Details: ")
-			fmt.Println(i.details)
-			gridJobErrorMessage = i.details
+			fmt.Println(i.Details)
+			gridJobErrorMessage = i.Details
 		}
 
 	}
@@ -183,7 +183,7 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 	var dids []string
 	//get trace data
 	lfnsite, ts, jobtype, wnname, err, gridJobErrorMessage := FWJRconsumer(msg)
-	if gridJobErrorMessage != nil && err != nil {
+	if gridJobErrorMessage != "" && err != nil {
 		fmt.Println("One message received:")
 		fmt.Println("lfnsite")
 		fmt.Println(lfnsite)
@@ -218,7 +218,7 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 				site = s
 			}
 			for _, glfn := range goodlfn {
-				trc := NewTrace(glfn, site, ts, jobtype, wnname, "fwjr", "unknown", err, gridJobErrorMessage)
+				trc := NewTrace(glfn, site, ts, jobtype, wnname, "fwjr", "unknown", gridJobErrorMessage)
 				data, err := json.Marshal(trc)
 				if err != nil {
 					if Config.Verbose > 0 {
