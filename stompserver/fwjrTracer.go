@@ -245,6 +245,8 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 						log.Printf("Failed to send %s to stomp.", trc.DID)
 					} else {
 						Send.Inc()
+						// TODO: Remove this later
+						log.Println("Trace has been sent successfully")
 					}
 				} else {
 					log.Fatal("*** Config.Enpoint is empty, check config file! ***")
