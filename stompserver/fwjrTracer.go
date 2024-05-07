@@ -182,7 +182,7 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 	var dids []string
 	//get trace data
 	lfnsite, ts, jobtype, wnname, err, gridJobErrorMessage := FWJRconsumer(msg)
-	if gridJobErrorMessage != "" && err != nil {
+	if gridJobErrorMessage != ""  {
 		fmt.Println("One message received:")
 		fmt.Println("lfnsite")
 		fmt.Println(lfnsite)
