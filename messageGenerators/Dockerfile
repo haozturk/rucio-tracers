@@ -24,6 +24,7 @@ RUN git checkout cmsrucio-691-fix
 RUN make
 FROM alpine
 # when COPY, need full path, ${WDIR}/RucioTracers/stompserver/RucioTracer will nor wor, WHY?
-#COPY --from=go-builder /data/RucioTracers/messageGenerators/RucioTracer /data/
-#RUN mkdir -p /data/run && mkdir -p /data/etc
-CMD ./generators -config /etc/secrets/stompserverconfig4fwjr.json -infile wmarchive_sample_2.json -nrec 2 -producer wmarchive
+COPY --from=go-builder /data/RucioTracers/messageGenerators/generators /data/
+RUN mkdir -p /data/run && mkdir -p /data/etc
+COPY --from=go-builder /data/RucioTracers/run-generators.sh /data/run/
+RUN chmod +x /data/run/*
