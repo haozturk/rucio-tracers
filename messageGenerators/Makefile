@@ -4,7 +4,7 @@ flags=-ldflags="-s -w -X main.version=${VERSION}"
 all: build
 
 build:
-	go clean; rm -rf pkg; go build ${flags}
+	go clean; rm -rf pkg; go build -o generators ${flags}
 
 build_debug:
 	go clean; rm -rf pkg; go build ${flags} -gcflags="-m -m"
