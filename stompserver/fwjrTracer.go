@@ -168,8 +168,9 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 		for _, i := range v.Errors {
 			fmt.Print("Exitcode: ")
 			fmt.Println(i.Exitcode)
-			fmt.Print("Details: ")
-			fmt.Println(i.Details)
+			fmt.Print("Not printing the error details for now")
+			//fmt.Print("Details: ")
+			//fmt.Println(i.Details)
 			gridJobErrorMessage = i.Details
 		}
 
