@@ -16,6 +16,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/go-stomp/stomp"
 	"github.com/google/uuid"
 	// load-balanced stomp manager
 	lbstomp "github.com/vkuznet/lb-stomp"
@@ -160,7 +161,7 @@ func processMessage(input string, nrec int, producer string) (Record, error) {
 		}
 		// send data to Stomp endpoint
 		if Config.Endpoint != "" {
-			err := stompMgr.Send(data)
+			err := stompMgr.Send(data, stomp.SendOpt.Header("appversion", "fwjrAMQ"))
 			if err == nil {
 				ids = append(ids, uid)
 				log.Println("Message successfully sent")
