@@ -163,6 +163,7 @@ func processMessage(input string, nrec int, producer string) (Record, error) {
 			err := stompMgr.Send(data)
 			if err == nil {
 				ids = append(ids, uid)
+				log.Println("Message successfully sent")
 			} else {
 				record := make(Record)
 				record["status"] = "fail"
