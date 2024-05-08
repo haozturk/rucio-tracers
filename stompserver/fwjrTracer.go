@@ -193,8 +193,8 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 		fmt.Println(string(jobtype))
 		fmt.Println("wnname")
 		fmt.Println(string(wnname))
-		fmt.Println("gridJobErrorMessage")
-		fmt.Println(gridJobErrorMessage)	
+		//fmt.Println("gridJobErrorMessage")
+		//fmt.Println(gridJobErrorMessage)	
 		//os.Exit(3)
 	} else{
 		fmt.Println("Skipping these files since, its error is null")
