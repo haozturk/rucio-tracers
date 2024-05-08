@@ -1,409 +1,352 @@
 {
-    "_index": "monit_prod_wmarchive_raw_metric-2024-04-30",
-    "_id": "ea9a7395b5f64b14ad233ba06c1c74b9",
-    "_version": 1,
-    "_score": null,
-    "_ignored": [
-      "data.steps.performance.cmssw.ApplicationMemory.AverageGrowthRateVsize",
-      "data.steps.performance.cmssw.ApplicationMemory.AverageGrowthRateRss"
-    ],
-    "_source": {
-      "data": {
-        "Campaign": "",
-        "EOSLogURL": "https://eoscmsweb.cern.ch/eos/cms/store/logs/prod/recent/PRODUCTION/cmsunified_ACDC2_task_EXO-RunIISummer20UL16GEN-02060__v1_T_240429_142059_5390/EXO-RunIISummer20UL16MiniAODv2-04780_0MergeMINIAODSIMoutput/vocms0282.cern.ch-1535169-4-log.tar.gz",
-        "LFNArray": [
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/32E342DD-2E9C-D949-BA42-51305880D9AC.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/C8841326-CD34-324D-9AC2-31D13AF66927.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/310BF0DD-7FCD-8F48-985F-F8B24CBD75BA.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/CE6B98DE-4CC7-0348-882B-1222D4E4D24C.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/872CA52D-DD63-6E4E-8141-96AFAC9DA33C.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/C7C51B99-DE70-2F4B-B124-D2847D373B85.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/B497F191-1476-3748-9A4A-A3376174043B.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/D008879B-5812-694A-AB1B-23DD37561A5B.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/813BFFFE-566E-AE44-A19E-3D634C62F07A.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/DDF05B34-AC67-3A46-B463-1B7AD11975C2.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/56679F9F-C51A-304C-975A-7DED98F41109.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/038F42D6-E50B-B34D-AA87-F239B31524BD.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/91F9FA79-F95E-294F-97C6-43B68FE8ACCE.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/4C194AF5-093D-DD4A-A510-B7AA3092ABBD.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/01F2355B-1FE0-DB4B-9A3A-B89DE4274483.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/53ED29B9-AFC2-E445-845E-9ABE2FAFC477.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/E368C181-153C-0543-954E-739FB810AEAC.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/AA537F0E-E2EB-9A41-A58F-4850266F03C6.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/62165CFA-044D-5F4F-9F5C-459D37B48827.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/519CE685-DCE2-5143-B2C6-1F0FB4A5B56E.root",
-          "/store/unmerged/logs/prod/2024/4/30/cmsunified_ACDC2_task_EXO-RunIISummer20UL16GEN-02060__v1_T_240429_142059_5390/EXO-RunIISummer20UL16MiniAODv2-04780_0MergeMINIAODSIMoutput/30000/4/0b5186b5-472b-4f70-a77e-8f102022469b-0-4-logArchive.tar.gz",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/98CC6EA5-B3D1-4541-B065-6DC51628895E.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/C4E73CBB-0D8A-7D4F-B5F7-6E569F52F74C.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/F0D17E25-C098-4548-A656-A3F757C3B9E6.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/76EE5EC0-2832-BA4A-9B4C-C8AFEFAFBEC0.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/1AF50894-A650-F343-A3AD-F64F5504BDB0.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/261CD14E-4F57-514F-9E72-356CB2228D2D.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/09C137ED-AA2A-194F-B300-F11B646F24C4.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/CFBAA6F2-2E1F-D142-A590-5CFF4465A776.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/983D791B-3393-E443-B449-A3FE1C4DF30C.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/10CCCB69-1C8B-6044-9F13-A7CF7B3A9131.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/85CD75C0-55AB-FA41-8362-BD328BA0C5D8.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/59BC15B1-CAE2-0148-B5F2-A0C5E0A47E0B.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/D91FCD31-E29C-7C41-B2A8-476FC4A9246C.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/1EC7CC61-0DB9-0944-BB8E-A3D4B2224FA3.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/1D218349-E7C6-E542-BD83-F6F9CA2F565B.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/953B604A-A81B-CC4C-B479-E8B1433480CB.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/68A21947-2BBE-404F-BE06-C742BDB9EA4E.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/47A44872-16DC-484B-A3EC-50741436C8E8.root",
-          "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/E2A38C52-D3D0-7445-A0DE-4524FCBE31D9.root"
-        ],
-        "LFNArrayRef": [
-          "skippedFiles",
-          "inputLFNs",
-          "outputLFNs",
-          "fallbackFiles"
-        ],
-        "PrepID": "EXO-RunIISummer20UL16MiniAODv2-04780",
-        "WMTiming": {
-          "WMJobEnd": 1714498045,
-          "WMJobStart": 1714495348,
-          "WMTotalWallClockTime": 2697
-        },
-        "WorkerNodeInfo": {
-          "HostName": "c01-016-176",
-          "JobFeatures": {
-            "allocated_cpu": null,
-            "hs06_job": null
-          },
-          "MachineFeatures": {
-            "hs06": null,
-            "total_cpu": null
-          }
-        },
-        "fallbackFiles": [],
-        "meta_data": {
-          "agent_ver": "2.3.0.2",
-          "fwjr_id": "1535169-4",
-          "host": "vocms0282.cern.ch",
-          "jobstate": "jobfailed",
-          "jobtype": "Merge",
-          "ts": 1714499135,
-          "wn_name": "c01-016-176"
-        },
-        "metadata": {
-          "uuid": "ea9a7395b5f64b14ad233ba06c1c74b9"
-        },
-        "skippedFiles": [
-          14,
-          3,
-          34,
-          9,
-          30,
-          1,
-          19,
-          24,
-          36,
-          33,
-          31,
-          13,
-          12,
-          27,
-          8,
-          7,
-          37,
-          16,
-          38,
-          28,
-          29,
-          21,
-          4,
-          2,
-          0,
-          6,
-          17,
-          18,
-          39,
-          5,
-          22,
-          26,
-          23,
-          35,
-          25,
-          10,
-          32,
-          15,
-          11
-        ],
-        "steps": [
-          {
-            "WMCMSSWSubprocess": {
-              "endTime": 1714498040.8350568,
-              "startTime": 1714495369.8195293,
-              "sysTime": 5.750944,
-              "userTime": 5.234378,
-              "wallClockTime": 2671.015527486801
-            },
-            "analysis": {},
-            "cleanup": {},
-            "errors": [
-              {
-                "details": "No output files present in the report\nList of skipped files is:\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/01F2355B-1FE0-DB4B-9A3A-B89DE4274483.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/CE6B98DE-4CC7-0348-882B-1222D4E4D24C.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/1EC7CC61-0DB9-0944-BB8E-A3D4B2224FA3.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/DDF05B34-AC67-3A46-B463-1B7AD11975C2.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/10CCCB69-1C8B-6044-9F13-A7CF7B3A9131.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/C8841326-CD34-324D-9AC2-31D13AF66927.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/519CE685-DCE2-5143-B2C6-1F0FB4A5B56E.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/76EE5EC0-2832-BA4A-9B4C-C8AFEFAFBEC0.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/953B604A-A81B-CC4C-B479-E8B1433480CB.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/D91FCD31-E29C-7C41-B2A8-476FC4A9246C.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/85CD75C0-55AB-FA41-8362-BD328BA0C5D8.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/4C194AF5-093D-DD4A-A510-B7AA3092ABBD.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/91F9FA79-F95E-294F-97C6-43B68FE8ACCE.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/09C137ED-AA2A-194F-B300-F11B646F24C4.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/813BFFFE-566E-AE44-A19E-3D634C62F07A.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/D008879B-5812-694A-AB1B-23DD37561A5B.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/68A21947-2BBE-404F-BE06-C742BDB9EA4E.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/E368C181-153C-0543-954E-739FB810AEAC.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/47A44872-16DC-484B-A3EC-50741436C8E8.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/CFBAA6F2-2E1F-D142-A590-5CFF4465A776.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/983D791B-3393-E443-B449-A3FE1C4DF30C.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/98CC6EA5-B3D1-4541-B065-6DC51628895E.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/872CA52D-DD63-6E4E-8141-96AFAC9DA33C.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/310BF0DD-7FCD-8F48-985F-F8B24CBD75BA.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/32E342DD-2E9C-D949-BA42-51305880D9AC.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/B497F191-1476-3748-9A4A-A3376174043B.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/AA537F0E-E2EB-9A41-A58F-4850266F03C6.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/62165CFA-044D-5F4F-9F5C-459D37B48827.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/E2A38C52-D3D0-7445-A0DE-4524FCBE31D9.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/C7C51B99-DE70-2F4B-B124-D2847D373B85.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/C4E73CBB-0D8A-7D4F-B5F7-6E569F52F74C.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/261CD14E-4F57-514F-9E72-356CB2228D2D.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/F0D17E25-C098-4548-A656-A3F757C3B9E6.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/1D218349-E7C6-E542-BD83-F6F9CA2F565B.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/1AF50894-A650-F343-A3AD-F64F5504BDB0.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/56679F9F-C51A-304C-975A-7DED98F41109.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/59BC15B1-CAE2-0148-B5F2-A0C5E0A47E0B.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/53ED29B9-AFC2-E445-845E-9ABE2FAFC477.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/038F42D6-E50B-B34D-AA87-F239B31524BD.root\n",
-                "exitCode": 60450,
-                "type": "NoOutput"
-              }
-            ],
-            "input": [],
-            "logs": {},
-            "name": "cmsRun1",
-            "output": [],
-            "performance": {
-              "cmssw": {
-                "ApplicationMemory": {
-                  "AverageGrowthRateRss": "-nan",
-                  "AverageGrowthRateVsize": "-nan",
-                  "HEAP_ARENA_N_UNUSED_CHUNKS": 1,
-                  "HEAP_ARENA_SIZE_BYTES": 0,
-                  "HEAP_MAPPED_N_CHUNKS": 0,
-                  "HEAP_MAPPED_SIZE_BYTES": 0,
-                  "HEAP_TOP_FREE_BYTES": 0,
-                  "HEAP_UNUSED_BYTES": 0,
-                  "HEAP_USED_BYTES": 0,
-                  "PeakValueRss": 0,
-                  "PeakValueVsize": 0
-                },
-                "ProcessingSummary": {
-                  "NumberBeginLumiCalls": 0,
-                  "NumberBeginRunCalls": 0,
-                  "NumberEvents": 0
-                },
-                "StorageStatistics": {
-                  "Parameter-untracked-bool-enabled": true,
-                  "Parameter-untracked-bool-prefetching": false,
-                  "Parameter-untracked-bool-stats": true,
-                  "Parameter-untracked-string-cacheHint": "lazy-download",
-                  "Parameter-untracked-string-readHint": "read-ahead-buffered",
-                  "ROOT-tfile-read-totalMegabytes": 0.0601578,
-                  "ROOT-tfile-write-totalMegabytes": 0,
-                  "Timing-root-open-maxMsecs": 0,
-                  "Timing-root-open-minMsecs": 0,
-                  "Timing-root-open-numOperations": 78,
-                  "Timing-root-open-numSuccessfulOperations": 0,
-                  "Timing-root-open-totalMegabytes": 0,
-                  "Timing-root-open-totalMsecs": 0,
-                  "Timing-root-stagein-maxMsecs": 57.9488,
-                  "Timing-root-stagein-minMsecs": 0.01692,
-                  "Timing-root-stagein-numOperations": 39,
-                  "Timing-root-stagein-numSuccessfulOperations": 39,
-                  "Timing-root-stagein-totalMegabytes": 0,
-                  "Timing-root-stagein-totalMsecs": 61.2192,
-                  "Timing-tstoragefile-construct-maxMsecs": 0,
-                  "Timing-tstoragefile-construct-minMsecs": 0,
-                  "Timing-tstoragefile-construct-numOperations": 78,
-                  "Timing-tstoragefile-construct-numSuccessfulOperations": 0,
-                  "Timing-tstoragefile-construct-totalMegabytes": 0,
-                  "Timing-tstoragefile-construct-totalMsecs": 0
-                },
-                "SystemCPU": {
-                  "CPUModels": "AMD EPYC 7742 64-Core Processor",
-                  "averageCoreSpeed": 2192.38,
-                  "cpusetCount": 256,
-                  "totalCPUs": 256
-                },
-                "SystemMemory": {
-                  "Active": 399474640,
-                  "Active(anon)": 154169712,
-                  "Active(file)": 245304928,
-                  "AnonHugePages": 106496,
-                  "AnonPages": 173964308,
-                  "Bounce": 0,
-                  "Buffers": 5230252,
-                  "Cached": 368754892,
-                  "CmaFree": 0,
-                  "CmaTotal": 0,
-                  "CommitLimit": 1485746804,
-                  "Committed_AS": 337168612,
-                  "DirectMap1G": 572522496,
-                  "DirectMap2M": 30861312,
-                  "DirectMap4k": 450832,
-                  "Dirty": 38960,
-                  "HardwareCorrupted": 0,
-                  "HugePages_Free": 0,
-                  "HugePages_Rsvd": 0,
-                  "HugePages_Surp": 0,
-                  "HugePages_Total": 0,
-                  "Hugepagesize": 2048,
-                  "Inactive": 148783300,
-                  "Inactive(anon)": 25401320,
-                  "Inactive(file)": 123381980,
-                  "KernelStack": 177920,
-                  "Mapped": 4386280,
-                  "MemAvailable": 398227040,
-                  "MemFree": 20192228,
-                  "MemTotal": 594138444,
-                  "Mlocked": 12,
-                  "NFS_Unstable": 0,
-                  "PageTables": 914828,
-                  "Percpu": 515072,
-                  "SReclaimable": 10774080,
-                  "SUnreclaim": 4822036,
-                  "Shmem": 5297124,
-                  "Slab": 15596116,
-                  "SwapCached": 594376,
-                  "SwapFree": 1177096088,
-                  "SwapTotal": 1188677584,
-                  "Unevictable": 12,
-                  "VmallocChunk": -474430820,
-                  "VmallocTotal": -1,
-                  "VmallocUsed": 2736460,
-                  "Writeback": 296,
-                  "WritebackTmp": 0
-                },
-                "Timing": {
-                  "AvgEventTime": 0,
-                  "EventSetup Get": 0,
-                  "EventSetup Lock": 0,
-                  "EventThroughput": 0,
-                  "MaxEventTime": 0,
-                  "MinEventTime": "1e+06",
-                  "NumberOfStreams": 1,
-                  "NumberOfThreads": 1,
-                  "TotalInitCPU": 4.77948,
-                  "TotalInitTime": 2661.57,
-                  "TotalJobCPU": 9.07043,
-                  "TotalJobTime": 2669.2,
-                  "TotalLoopCPU": 0,
-                  "TotalLoopTime": 0
-                }
-              },
-              "cpu": {
-                "AvgEventTime": 0,
-                "EventThroughput": 0,
-                "MaxEventTime": 0,
-                "MinEventTime": 1000000,
-                "NumberOfStreams": 1,
-                "NumberOfThreads": 1,
-                "TotalInitCPU": 4.77948,
-                "TotalInitTime": 2661.57,
-                "TotalJobCPU": 9.07043,
-                "TotalJobTime": 2669.2,
-                "TotalLoopCPU": 0
-              },
-              "memory": {
-                "PeakValueRss": 0,
-                "PeakValueVsize": 0
-              },
-              "multicore": {},
-              "storage": {}
-            },
-            "site": "T1_DE_KIT",
-            "start": 1714495350,
-            "status": 60450,
-            "stop": 1714498041
-          },
-          {
-            "WMCMSSWSubprocess": {},
-            "analysis": {},
-            "cleanup": {},
-            "errors": [],
-            "input": [],
-            "logs": {},
-            "name": "stageOut1",
-            "output": [],
-            "performance": {
-              "cmssw": {},
-              "cpu": {},
-              "memory": {},
-              "multicore": {},
-              "storage": {}
-            },
-            "site": "T1_DE_KIT",
-            "start": 1714498041,
-            "status": 0,
-            "stop": 1714498041
-          },
-          {
-            "WMCMSSWSubprocess": {},
-            "analysis": {},
-            "cleanup": {},
-            "errors": [],
-            "input": [],
-            "logs": {},
-            "name": "logArch1",
-            "output": [
-              {
-                "adler32": "39b2144d",
-                "cksum": "1183761565",
-                "events": 0,
-                "inputLFNs": [],
-                "location": "T1_DE_KIT_Disk",
-                "merged": false,
-                "module_label": "logArchive",
-                "outputLFNs": [
-                  20
-                ],
-                "prep_id": "EXO-RunIISummer20UL16MiniAODv2-04780",
-                "runs": [],
-                "size": 0
-              }
-            ],
-            "performance": {
-              "cmssw": {},
-              "cpu": {},
-              "memory": {},
-              "multicore": {},
-              "storage": {}
-            },
-            "site": "T1_DE_KIT",
-            "start": 1714498041,
-            "status": 0,
-            "stop": 1714498045
-          }
-        ],
-        "task": "/cmsunified_ACDC2_task_EXO-RunIISummer20UL16GEN-02060__v1_T_240429_142059_5390/EXO-RunIISummer20UL16MiniAODv2-04780_0MergeMINIAODSIMoutput",
-        "wmaid": "ea9a7395b5f64b14ad233ba06c1c74b9",
-        "wmats": 1714499237,
-        "wmats_num": 1714499237
+  "Campaign": "",
+  "EOSLogURL": "https://eoscmsweb.cern.ch/eos/cms/store/logs/prod/recent/PRODUCTION/cmsunified_ACDC2_task_EXO-RunIISummer20UL16GEN-02060__v1_T_240429_142059_5390/EXO-RunIISummer20UL16MiniAODv2-04780_0MergeMINIAODSIMoutput/vocms0282.cern.ch-1535169-4-log.tar.gz",
+  "LFNArray": [
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/32E342DD-2E9C-D949-BA42-51305880D9AC.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/C8841326-CD34-324D-9AC2-31D13AF66927.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/310BF0DD-7FCD-8F48-985F-F8B24CBD75BA.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/CE6B98DE-4CC7-0348-882B-1222D4E4D24C.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/872CA52D-DD63-6E4E-8141-96AFAC9DA33C.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/C7C51B99-DE70-2F4B-B124-D2847D373B85.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/B497F191-1476-3748-9A4A-A3376174043B.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/D008879B-5812-694A-AB1B-23DD37561A5B.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/813BFFFE-566E-AE44-A19E-3D634C62F07A.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/DDF05B34-AC67-3A46-B463-1B7AD11975C2.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/56679F9F-C51A-304C-975A-7DED98F41109.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/038F42D6-E50B-B34D-AA87-F239B31524BD.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/91F9FA79-F95E-294F-97C6-43B68FE8ACCE.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/4C194AF5-093D-DD4A-A510-B7AA3092ABBD.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/01F2355B-1FE0-DB4B-9A3A-B89DE4274483.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/53ED29B9-AFC2-E445-845E-9ABE2FAFC477.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/E368C181-153C-0543-954E-739FB810AEAC.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/AA537F0E-E2EB-9A41-A58F-4850266F03C6.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/62165CFA-044D-5F4F-9F5C-459D37B48827.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/519CE685-DCE2-5143-B2C6-1F0FB4A5B56E.root",
+    "/store/unmerged/logs/prod/2024/4/30/cmsunified_ACDC2_task_EXO-RunIISummer20UL16GEN-02060__v1_T_240429_142059_5390/EXO-RunIISummer20UL16MiniAODv2-04780_0MergeMINIAODSIMoutput/30000/4/0b5186b5-472b-4f70-a77e-8f102022469b-0-4-logArchive.tar.gz",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/98CC6EA5-B3D1-4541-B065-6DC51628895E.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/C4E73CBB-0D8A-7D4F-B5F7-6E569F52F74C.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/F0D17E25-C098-4548-A656-A3F757C3B9E6.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/76EE5EC0-2832-BA4A-9B4C-C8AFEFAFBEC0.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/1AF50894-A650-F343-A3AD-F64F5504BDB0.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/261CD14E-4F57-514F-9E72-356CB2228D2D.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/09C137ED-AA2A-194F-B300-F11B646F24C4.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/CFBAA6F2-2E1F-D142-A590-5CFF4465A776.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/983D791B-3393-E443-B449-A3FE1C4DF30C.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/10CCCB69-1C8B-6044-9F13-A7CF7B3A9131.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/85CD75C0-55AB-FA41-8362-BD328BA0C5D8.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/59BC15B1-CAE2-0148-B5F2-A0C5E0A47E0B.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/D91FCD31-E29C-7C41-B2A8-476FC4A9246C.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/1EC7CC61-0DB9-0944-BB8E-A3D4B2224FA3.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/1D218349-E7C6-E542-BD83-F6F9CA2F565B.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/953B604A-A81B-CC4C-B479-E8B1433480CB.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/68A21947-2BBE-404F-BE06-C742BDB9EA4E.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/47A44872-16DC-484B-A3EC-50741436C8E8.root",
+    "/store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/E2A38C52-D3D0-7445-A0DE-4524FCBE31D9.root"
+  ],
+  "LFNArrayRef": [
+    "skippedFiles",
+    "inputLFNs",
+    "outputLFNs",
+    "fallbackFiles"
+  ],
+  "PrepID": "EXO-RunIISummer20UL16MiniAODv2-04780",
+  "WMTiming": {
+    "WMJobEnd": 1714498045,
+    "WMJobStart": 1714495348,
+    "WMTotalWallClockTime": 2697
+  },
+  "WorkerNodeInfo": {
+    "HostName": "c01-016-176",
+    "JobFeatures": {
+      "allocated_cpu": null,
+      "hs06_job": null
+    },
+    "MachineFeatures": {
+      "hs06": null,
+      "total_cpu": null
+    }
+  },
+  "fallbackFiles": [],
+  "meta_data": {
+    "agent_ver": "2.3.0.2",
+    "fwjr_id": "1535169-4",
+    "host": "vocms0282.cern.ch",
+    "jobstate": "jobfailed",
+    "jobtype": "Merge",
+    "ts": 1714499135,
+    "wn_name": "c01-016-176"
+  },
+  "metadata": {
+    "uuid": "ea9a7395b5f64b14ad233ba06c1c74b9"
+  },
+  "skippedFiles": [
+    14,
+    3,
+    34,
+    9,
+    30,
+    1,
+    19,
+    24,
+    36,
+    33,
+    31,
+    13,
+    12,
+    27,
+    8,
+    7,
+    37,
+    16,
+    38,
+    28,
+    29,
+    21,
+    4,
+    2,
+    0,
+    6,
+    17,
+    18,
+    39,
+    5,
+    22,
+    26,
+    23,
+    35,
+    25,
+    10,
+    32,
+    15,
+    11
+  ],
+  "steps": [
+    {
+      "WMCMSSWSubprocess": {
+        "endTime": 1714498040.8350568,
+        "startTime": 1714495369.8195293,
+        "sysTime": 5.750944,
+        "userTime": 5.234378,
+        "wallClockTime": 2671.015527486801
       },
-      "metadata": {
-        "hostname": "monit-amqsource-7b19fbd98c.cern.ch",
-        "partition": "19",
-        "offset": "4834792",
-        "type_prefix": "raw",
-        "kafka_timestamp": 1714499238604,
-        "topic": "monit-wmarchive_raw_metric",
-        "producer": "wmarchive",
-        "_id": "ea9a7395b5f64b14ad233ba06c1c74b9",
-        "type": "metric",
-        "version": "001",
-        "timestamp": 1714499237582
-      }
+      "analysis": {},
+      "cleanup": {},
+      "errors": [
+        {
+          "details": "No output files present in the report\nList of skipped files is:\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/01F2355B-1FE0-DB4B-9A3A-B89DE4274483.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/CE6B98DE-4CC7-0348-882B-1222D4E4D24C.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/1EC7CC61-0DB9-0944-BB8E-A3D4B2224FA3.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/DDF05B34-AC67-3A46-B463-1B7AD11975C2.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/10CCCB69-1C8B-6044-9F13-A7CF7B3A9131.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/C8841326-CD34-324D-9AC2-31D13AF66927.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/519CE685-DCE2-5143-B2C6-1F0FB4A5B56E.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/76EE5EC0-2832-BA4A-9B4C-C8AFEFAFBEC0.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/953B604A-A81B-CC4C-B479-E8B1433480CB.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/D91FCD31-E29C-7C41-B2A8-476FC4A9246C.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/85CD75C0-55AB-FA41-8362-BD328BA0C5D8.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/4C194AF5-093D-DD4A-A510-B7AA3092ABBD.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/91F9FA79-F95E-294F-97C6-43B68FE8ACCE.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/09C137ED-AA2A-194F-B300-F11B646F24C4.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/813BFFFE-566E-AE44-A19E-3D634C62F07A.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/D008879B-5812-694A-AB1B-23DD37561A5B.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/68A21947-2BBE-404F-BE06-C742BDB9EA4E.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/E368C181-153C-0543-954E-739FB810AEAC.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/47A44872-16DC-484B-A3EC-50741436C8E8.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/CFBAA6F2-2E1F-D142-A590-5CFF4465A776.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/983D791B-3393-E443-B449-A3FE1C4DF30C.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/98CC6EA5-B3D1-4541-B065-6DC51628895E.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/872CA52D-DD63-6E4E-8141-96AFAC9DA33C.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/310BF0DD-7FCD-8F48-985F-F8B24CBD75BA.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/32E342DD-2E9C-D949-BA42-51305880D9AC.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/B497F191-1476-3748-9A4A-A3376174043B.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/AA537F0E-E2EB-9A41-A58F-4850266F03C6.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/62165CFA-044D-5F4F-9F5C-459D37B48827.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/E2A38C52-D3D0-7445-A0DE-4524FCBE31D9.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/C7C51B99-DE70-2F4B-B124-D2847D373B85.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/C4E73CBB-0D8A-7D4F-B5F7-6E569F52F74C.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/261CD14E-4F57-514F-9E72-356CB2228D2D.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/F0D17E25-C098-4548-A656-A3F757C3B9E6.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/1D218349-E7C6-E542-BD83-F6F9CA2F565B.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/1AF50894-A650-F343-A3AD-F64F5504BDB0.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/56679F9F-C51A-304C-975A-7DED98F41109.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/59BC15B1-CAE2-0148-B5F2-A0C5E0A47E0B.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/53ED29B9-AFC2-E445-845E-9ABE2FAFC477.root\n  /store/unmerged/RunIISummer20UL16MiniAODv2/BlackHole-BH5-RPScan_TuneCP5_13TeV_blackmax-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v2/2550000/038F42D6-E50B-B34D-AA87-F239B31524BD.root\n",
+          "exitCode": 60450,
+          "type": "NoOutput"
+        }
+      ],
+      "input": [],
+      "logs": {},
+      "name": "cmsRun1",
+      "output": [],
+      "performance": {
+        "cmssw": {
+          "ApplicationMemory": {
+            "AverageGrowthRateRss": "-nan",
+            "AverageGrowthRateVsize": "-nan",
+            "HEAP_ARENA_N_UNUSED_CHUNKS": 1,
+            "HEAP_ARENA_SIZE_BYTES": 0,
+            "HEAP_MAPPED_N_CHUNKS": 0,
+            "HEAP_MAPPED_SIZE_BYTES": 0,
+            "HEAP_TOP_FREE_BYTES": 0,
+            "HEAP_UNUSED_BYTES": 0,
+            "HEAP_USED_BYTES": 0,
+            "PeakValueRss": 0,
+            "PeakValueVsize": 0
+          },
+          "ProcessingSummary": {
+            "NumberBeginLumiCalls": 0,
+            "NumberBeginRunCalls": 0,
+            "NumberEvents": 0
+          },
+          "StorageStatistics": {
+            "Parameter-untracked-bool-enabled": true,
+            "Parameter-untracked-bool-prefetching": false,
+            "Parameter-untracked-bool-stats": true,
+            "Parameter-untracked-string-cacheHint": "lazy-download",
+            "Parameter-untracked-string-readHint": "read-ahead-buffered",
+            "ROOT-tfile-read-totalMegabytes": 0.0601578,
+            "ROOT-tfile-write-totalMegabytes": 0,
+            "Timing-root-open-maxMsecs": 0,
+            "Timing-root-open-minMsecs": 0,
+            "Timing-root-open-numOperations": 78,
+            "Timing-root-open-numSuccessfulOperations": 0,
+            "Timing-root-open-totalMegabytes": 0,
+            "Timing-root-open-totalMsecs": 0,
+            "Timing-root-stagein-maxMsecs": 57.9488,
+            "Timing-root-stagein-minMsecs": 0.01692,
+            "Timing-root-stagein-numOperations": 39,
+            "Timing-root-stagein-numSuccessfulOperations": 39,
+            "Timing-root-stagein-totalMegabytes": 0,
+            "Timing-root-stagein-totalMsecs": 61.2192,
+            "Timing-tstoragefile-construct-maxMsecs": 0,
+            "Timing-tstoragefile-construct-minMsecs": 0,
+            "Timing-tstoragefile-construct-numOperations": 78,
+            "Timing-tstoragefile-construct-numSuccessfulOperations": 0,
+            "Timing-tstoragefile-construct-totalMegabytes": 0,
+            "Timing-tstoragefile-construct-totalMsecs": 0
+          },
+          "SystemCPU": {
+            "CPUModels": "AMD EPYC 7742 64-Core Processor",
+            "averageCoreSpeed": 2192.38,
+            "cpusetCount": 256,
+            "totalCPUs": 256
+          },
+          "SystemMemory": {
+            "Active": 399474640,
+            "Active(anon)": 154169712,
+            "Active(file)": 245304928,
+            "AnonHugePages": 106496,
+            "AnonPages": 173964308,
+            "Bounce": 0,
+            "Buffers": 5230252,
+            "Cached": 368754892,
+            "CmaFree": 0,
+            "CmaTotal": 0,
+            "CommitLimit": 1485746804,
+            "Committed_AS": 337168612,
+            "DirectMap1G": 572522496,
+            "DirectMap2M": 30861312,
+            "DirectMap4k": 450832,
+            "Dirty": 38960,
+            "HardwareCorrupted": 0,
+            "HugePages_Free": 0,
+            "HugePages_Rsvd": 0,
+            "HugePages_Surp": 0,
+            "HugePages_Total": 0,
+            "Hugepagesize": 2048,
+            "Inactive": 148783300,
+            "Inactive(anon)": 25401320,
+            "Inactive(file)": 123381980,
+            "KernelStack": 177920,
+            "Mapped": 4386280,
+            "MemAvailable": 398227040,
+            "MemFree": 20192228,
+            "MemTotal": 594138444,
+            "Mlocked": 12,
+            "NFS_Unstable": 0,
+            "PageTables": 914828,
+            "Percpu": 515072,
+            "SReclaimable": 10774080,
+            "SUnreclaim": 4822036,
+            "Shmem": 5297124,
+            "Slab": 15596116,
+            "SwapCached": 594376,
+            "SwapFree": 1177096088,
+            "SwapTotal": 1188677584,
+            "Unevictable": 12,
+            "VmallocChunk": -474430820,
+            "VmallocTotal": -1,
+            "VmallocUsed": 2736460,
+            "Writeback": 296,
+            "WritebackTmp": 0
+          },
+          "Timing": {
+            "AvgEventTime": 0,
+            "EventSetup Get": 0,
+            "EventSetup Lock": 0,
+            "EventThroughput": 0,
+            "MaxEventTime": 0,
+            "MinEventTime": "1e+06",
+            "NumberOfStreams": 1,
+            "NumberOfThreads": 1,
+            "TotalInitCPU": 4.77948,
+            "TotalInitTime": 2661.57,
+            "TotalJobCPU": 9.07043,
+            "TotalJobTime": 2669.2,
+            "TotalLoopCPU": 0,
+            "TotalLoopTime": 0
+          }
+        },
+        "cpu": {
+          "AvgEventTime": 0,
+          "EventThroughput": 0,
+          "MaxEventTime": 0,
+          "MinEventTime": 1000000,
+          "NumberOfStreams": 1,
+          "NumberOfThreads": 1,
+          "TotalInitCPU": 4.77948,
+          "TotalInitTime": 2661.57,
+          "TotalJobCPU": 9.07043,
+          "TotalJobTime": 2669.2,
+          "TotalLoopCPU": 0
+        },
+        "memory": {
+          "PeakValueRss": 0,
+          "PeakValueVsize": 0
+        },
+        "multicore": {},
+        "storage": {}
+      },
+      "site": "T1_DE_KIT",
+      "start": 1714495350,
+      "status": 60450,
+      "stop": 1714498041
     },
-    "fields": {
-      "data.meta_data.ts": [
-        "2024-04-30T17:45:35.000Z"
-      ],
-      "data.wmats": [
-        "2024-04-30T17:47:17.000Z"
-      ],
-      "data.steps.start": [
-        "2024-04-30T16:42:30.000Z",
-        "2024-04-30T17:27:21.000Z",
-        "2024-04-30T17:27:21.000Z"
-      ],
-      "data.steps.stop": [
-        "2024-04-30T17:27:21.000Z",
-        "2024-04-30T17:27:21.000Z",
-        "2024-04-30T17:27:25.000Z"
-      ],
-      "metadata.kafka_timestamp": [
-        "2024-04-30T17:47:18.604Z"
-      ],
-      "metadata.timestamp": [
-        "2024-04-30T17:47:17.582Z"
-      ]
+    {
+      "WMCMSSWSubprocess": {},
+      "analysis": {},
+      "cleanup": {},
+      "errors": [],
+      "input": [],
+      "logs": {},
+      "name": "stageOut1",
+      "output": [],
+      "performance": {
+        "cmssw": {},
+        "cpu": {},
+        "memory": {},
+        "multicore": {},
+        "storage": {}
+      },
+      "site": "T1_DE_KIT",
+      "start": 1714498041,
+      "status": 0,
+      "stop": 1714498041
     },
-    "highlight": {
-      "data.task": [
-        "@opensearch-dashboards-highlighted-field@/cmsunified_ACDC2_task_EXO-RunIISummer20UL16GEN-02060__v1_T_240429_142059_5390/EXO-RunIISummer20UL16MiniAODv2-04780_0MergeMINIAODSIMoutput@/opensearch-dashboards-highlighted-field@"
-      ]
-    },
-    "sort": [
-      1714499237582
-    ]
-  }
+    {
+      "WMCMSSWSubprocess": {},
+      "analysis": {},
+      "cleanup": {},
+      "errors": [],
+      "input": [],
+      "logs": {},
+      "name": "logArch1",
+      "output": [
+        {
+          "adler32": "39b2144d",
+          "cksum": "1183761565",
+          "events": 0,
+          "inputLFNs": [],
+          "location": "T1_DE_KIT_Disk",
+          "merged": false,
+          "module_label": "logArchive",
+          "outputLFNs": [
+            20
+          ],
+          "prep_id": "EXO-RunIISummer20UL16MiniAODv2-04780",
+          "runs": [],
+          "size": 0
+        }
+      ],
+      "performance": {
+        "cmssw": {},
+        "cpu": {},
+        "memory": {},
+        "multicore": {},
+        "storage": {}
+      },
+      "site": "T1_DE_KIT",
+      "start": 1714498041,
+      "status": 0,
+      "stop": 1714498045
+    }
+  ],
+  "task": "/cmsunified_ACDC2_task_EXO-RunIISummer20UL16GEN-02060__v1_T_240429_142059_5390/EXO-RunIISummer20UL16MiniAODv2-04780_0MergeMINIAODSIMoutput",
+  "wmaid": "ea9a7395b5f64b14ad233ba06c1c74b9",
+  "wmats": 1714499237,
+  "wmats_num": 1714499237
+}
