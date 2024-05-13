@@ -145,11 +145,13 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 	}
 	fmt.Println("Processing FWJR message")
 	//
+	gridJobErrorMessage = ""
 	for _, v := range rec.Steps {
 		ls.site = v.Site
 		var goodlfn []string
-		fmt.Println("Processing the following record step")
-		fmt.Println(rec)
+		
+		//fmt.Println("Processing the following record step")
+		//fmt.Println(rec)
 		for _, i := range v.Input {
 			if len(i.GUID) > 0 && i.Events != 0 {
 				lfn := i.Lfn
@@ -159,6 +161,7 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 				//fmt.Println(i)
 				//TODO: Understand why skip fallback files
 				if !insliceint(rec.FallbackFiles, lfn) {
+					/*
 					if inslicestr(rec.LFNArrayRef, "lfn") {
 						if lfn < len(rec.LFNArray) {
 							goodlfn = append(goodlfn, rec.LFNArray[lfn])
@@ -166,6 +169,13 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 							//fmt.Println(goodlfn)
 						}
 					} 
+					*/
+					// Let's try not skipping fallback files
+					if lfn < len(rec.LFNArray) {
+						goodlfn = append(goodlfn, rec.LFNArray[lfn])
+						//fmt.Println("It's a goodlfn")
+						//fmt.Println(goodlfn)
+					}
 				} 
 			} 
 
@@ -178,7 +188,7 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 		}
 		
 
-		gridJobErrorMessage = ""
+		
 		// Get the error message
 		for _, i := range v.Errors {
 			fmt.Print("Exitcode: ")
@@ -224,8 +234,8 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 	fmt.Println(string(jobtype))
 	fmt.Println("wnname")
 	fmt.Println(string(wnname))
-	fmt.Println("gridJobErrorMessage")
-    fmt.Println(gridJobErrorMessage)	
+	//fmt.Println("gridJobErrorMessage")
+    //fmt.Println(gridJobErrorMessage)	
 
 
 	if err != nil {
