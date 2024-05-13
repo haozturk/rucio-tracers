@@ -143,7 +143,7 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 	} else {
 		wnname = "unknown"
 	}
-	fmt.Println("Going over steps")
+	fmt.Println("Processing FWJR message")
 	//
 	for _, v := range rec.Steps {
 		ls.site = v.Site
@@ -153,17 +153,17 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 		for _, i := range v.Input {
 			if len(i.GUID) > 0 && i.Events != 0 {
 				lfn := i.Lfn
-				fmt.Println("Current lfn")
-				fmt.Println(lfn)
-				fmt.Println("Details:")
-				fmt.Println(i)
+				//fmt.Println("Current lfn")
+				//fmt.Println(lfn)
+				//fmt.Println("Details:")
+				//fmt.Println(i)
 				//TODO: Understand why skip fallback files
 				if !insliceint(rec.FallbackFiles, lfn) {
 					if inslicestr(rec.LFNArrayRef, "lfn") {
 						if lfn < len(rec.LFNArray) {
 							goodlfn = append(goodlfn, rec.LFNArray[lfn])
-							fmt.Println("It's a goodlfn")
-							fmt.Println(goodlfn)
+							//fmt.Println("It's a goodlfn")
+							//fmt.Println(goodlfn)
 						}
 					} 
 				} 
