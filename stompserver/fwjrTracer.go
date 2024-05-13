@@ -151,10 +151,16 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 		for _, i := range v.Input {
 			if len(i.GUID) > 0 && i.Events != 0 {
 				lfn := i.Lfn
+				fmt.Println("Current lfn")
+				fmt.Println("lfn")
+				fmt.Println("Details:")
+				fmt.Println(i)
 				if !insliceint(rec.FallbackFiles, lfn) {
 					if inslicestr(rec.LFNArrayRef, "lfn") {
 						if lfn < len(rec.LFNArray) {
 							goodlfn = append(goodlfn, rec.LFNArray[lfn])
+							fmt.Println("It's a goodlfn")
+							fmt.Println(goodlfn)
 						}
 					}
 				}
@@ -164,6 +170,8 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 		if len(goodlfn) > 0 {
 			ls.lfn = goodlfn
 			lfnsite = append(lfnsite, ls)
+		} else {
+			fmt.Println("There is no goodlfn in this iteration")
 		}
 		
 		// Get the error message
