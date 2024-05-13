@@ -160,8 +160,9 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 				//fmt.Println("Details:")
 				//fmt.Println(i)
 				//TODO: Understand why skip fallback files
+				/*
 				if !insliceint(rec.FallbackFiles, lfn) {
-					/*
+					
 					if inslicestr(rec.LFNArrayRef, "lfn") {
 						if lfn < len(rec.LFNArray) {
 							goodlfn = append(goodlfn, rec.LFNArray[lfn])
@@ -169,8 +170,11 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 							//fmt.Println(goodlfn)
 						}
 					} 
-					*/
-					// Let's try not skipping fallback files
+				
+				} 
+				*/
+				// Let's include fallback files
+				if inslicestr(rec.LFNArrayRef, "lfn") {
 					if lfn < len(rec.LFNArray) {
 						goodlfn = append(goodlfn, rec.LFNArray[lfn])
 						//fmt.Println("It's a goodlfn")
