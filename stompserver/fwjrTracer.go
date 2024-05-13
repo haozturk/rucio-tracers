@@ -103,7 +103,7 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 		Received.Inc()
 	}
 	//
-	if Config.Verbose > 2 {
+	if Config.Verbose == 2 {
 		log.Println("*****************Source AMQ message of wmarchive*********************")
 		log.Println("\n", string(msg.Body))
 		log.Println("*******************End AMQ message of wmarchive**********************")
@@ -115,7 +115,7 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 		log.Printf("Enable to Unmarchal input message. Error: %v", err)
 		return lfnsite, 0, "", "", err, ""
 	}
-	if Config.Verbose > 2 {
+	if Config.Verbose == 2 {
 		log.Println("******Parsed FWJR record****** ")
 		log.Printf("\n %v", rec)
 		log.Println(" ")
