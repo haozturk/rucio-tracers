@@ -103,7 +103,7 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 		Received.Inc()
 	}
 	//
-	if Config.Verbose == 2 {
+	if Config.Verbose > 2 {
 		log.Println("*****************Source AMQ message of wmarchive*********************")
 		log.Println("\n", string(msg.Body))
 		log.Println("*******************End AMQ message of wmarchive**********************")
@@ -115,7 +115,7 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 		log.Printf("Enable to Unmarchal input message. Error: %v", err)
 		return lfnsite, 0, "", "", err, ""
 	}
-	if Config.Verbose == 2 {
+	if Config.Verbose > 2 {
 		log.Println("******Parsed FWJR record****** ")
 		log.Printf("\n %v", rec)
 		log.Println(" ")
@@ -148,13 +148,16 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 	for _, v := range rec.Steps {
 		ls.site = v.Site
 		var goodlfn []string
+		fmt.Println("Processing the following record step")
+		fmt.Println(rec)
 		for _, i := range v.Input {
 			if len(i.GUID) > 0 && i.Events != 0 {
 				lfn := i.Lfn
 				fmt.Println("Current lfn")
-				fmt.Println("lfn")
+				fmt.Println(lfn)
 				fmt.Println("Details:")
 				fmt.Println(i)
+				//TODO: Understand why skip fallback files
 				if !insliceint(rec.FallbackFiles, lfn) {
 					if inslicestr(rec.LFNArrayRef, "lfn") {
 						if lfn < len(rec.LFNArray) {
@@ -162,9 +165,9 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 							fmt.Println("It's a goodlfn")
 							fmt.Println(goodlfn)
 						}
-					}
-				}
-			}
+					} 
+				} 
+			} 
 
 		}
 		if len(goodlfn) > 0 {
@@ -174,32 +177,36 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 			fmt.Println("There is no goodlfn in this iteration")
 		}
 		
+
+		gridJobErrorMessage = ""
 		// Get the error message
 		for _, i := range v.Errors {
 			fmt.Print("Exitcode: ")
 			fmt.Println(i.Exitcode)
-			fmt.Println("Not printing the error details for now")
+			//fmt.Println("Not printing the error details for now")
 			//fmt.Print("Details: ")
 			//fmt.Println(i.Details)
 			// Push error messages of FileOpen errors only for now
 			// TODO: Update this
-			if i.Exitcode == 8028 {
-				gridJobErrorMessage = i.Details
-				fmt.Println("8028 exit code is found. Sending it into rucio")
-				fmt.Println(i.Details)
-			} else {
-				gridJobErrorMessage = ""
-			}
+			if i.Exitcode == 8028 || i.Exitcode == 8001 || i.Exitcode == 8021 || i.Exitcode == 8022 {
+				//gridJobErrorMessage = i.Details
+
+				gridJobErrorMessage += i.Details
+				gridJobErrorMessage += "\n****\n "
+
+				fmt.Println("Suspicious replicas found ")
+				//fmt.Println(i.Details)
+			} 
 			
 		}
 
 	}
-	fmt.Println("Returning for:")
-	fmt.Println("lfnsite")
-	fmt.Println(lfnsite)
-	fmt.Println("gridJobErrorMessage")
-    fmt.Println(gridJobErrorMessage)	
-	fmt.Println("")
+	//fmt.Println("Returning for:")
+	//fmt.Println("lfnsite")
+	//fmt.Println(lfnsite)
+	//fmt.Println("gridJobErrorMessage")
+    //fmt.Println(gridJobErrorMessage)	
+	//fmt.Println("")
 	return lfnsite, ts, jobtype, wnname, nil, gridJobErrorMessage
 }
 
