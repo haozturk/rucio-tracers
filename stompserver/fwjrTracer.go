@@ -169,14 +169,14 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 		for _, i := range v.Errors {
 			fmt.Print("Exitcode: ")
 			fmt.Println(i.Exitcode)
-			fmt.Print("Not printing the error details for now")
+			fmt.Println("Not printing the error details for now")
 			//fmt.Print("Details: ")
 			//fmt.Println(i.Details)
 			// Push error messages of FileOpen errors only for now
 			// TODO: Update this
 			if i.Exitcode == 8028 {
 				gridJobErrorMessage = i.Details
-				fmt.Print("8028 exit code is found. Sending it into rucio")
+				fmt.Println("8028 exit code is found. Sending it into rucio")
 				fmt.Println(i.Details)
 			} else {
 				gridJobErrorMessage = ""
@@ -193,27 +193,17 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 	var dids []string
 	//get trace data
 	lfnsite, ts, jobtype, wnname, err, gridJobErrorMessage := FWJRconsumer(msg)
-	if gridJobErrorMessage != ""  {
-		fmt.Println("One message received:")
-		fmt.Println("lfnsite")
-		fmt.Println(lfnsite)
-		fmt.Println("ts")
-		fmt.Println(ts)
-		fmt.Println("jobtype")
-		fmt.Println(string(jobtype))
-		fmt.Println("wnname")
-		fmt.Println(string(wnname))
-		//fmt.Println("gridJobErrorMessage")
-		//fmt.Println(gridJobErrorMessage)	
-		//os.Exit(3)
-	} else{
-		fmt.Println("Skipping these files since, its error is null")
-		fmt.Println(lfnsite)
-		// Exiting to be safe
-		//os.Exit(3)
-	}
-
-	
+	fmt.Println("One message received:")
+	fmt.Println("lfnsite")
+	fmt.Println(lfnsite)
+	fmt.Println("ts")
+	fmt.Println(ts)
+	fmt.Println("jobtype")
+	fmt.Println(string(jobtype))
+	fmt.Println("wnname")
+	fmt.Println(string(wnname))
+	fmt.Println("gridJobErrorMessage")
+    fmt.Println(gridJobErrorMessage)	
 
 
 	if err != nil {
