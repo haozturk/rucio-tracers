@@ -15,6 +15,7 @@ import (
 	"log"
 	"sync/atomic"
 	"time"
+	"os"
 
 	// stomp library
 	"github.com/go-stomp/stomp"
@@ -171,7 +172,16 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 			fmt.Print("Not printing the error details for now")
 			//fmt.Print("Details: ")
 			//fmt.Println(i.Details)
-			gridJobErrorMessage = i.Details
+			// Push error messages of FileOpen errors only for now
+			// TODO: Update this
+			if i.Exitcode == 8028 {
+				gridJobErrorMessage = i.Details
+				fmt.Print("8028 exit code is found. Sending it into rucio")
+				fmt.Println(i.Details)
+			} else {
+				gridJobErrorMessage = ""
+			}
+			
 		}
 
 	}
@@ -254,6 +264,12 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 			}
 		}
 	}
+
+	if gridJobErrorMessage != "" {
+		// We have what we need. We can exit
+		os.Exit(3)
+	}
+
 	return dids, nil
 }
 
