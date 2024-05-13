@@ -143,6 +143,7 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 	} else {
 		wnname = "unknown"
 	}
+	fmt.Println("Going over steps")
 	//
 	for _, v := range rec.Steps {
 		ls.site = v.Site
@@ -164,7 +165,7 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 			ls.lfn = goodlfn
 			lfnsite = append(lfnsite, ls)
 		}
-
+		
 		// Get the error message
 		for _, i := range v.Errors {
 			fmt.Print("Exitcode: ")
@@ -185,6 +186,12 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 		}
 
 	}
+	fmt.Println("Returning for:")
+	fmt.Println("lfnsite")
+	fmt.Println(lfnsite)
+	fmt.Println("gridJobErrorMessage")
+    fmt.Println(gridJobErrorMessage)	
+	fmt.Println("")
 	return lfnsite, ts, jobtype, wnname, nil, gridJobErrorMessage
 }
 
