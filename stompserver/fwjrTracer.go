@@ -179,9 +179,15 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 						goodlfn = append(goodlfn, rec.LFNArray[lfn])
 						//fmt.Println("It's a goodlfn")
 						//fmt.Println(goodlfn)
+					} else {
+						fmt.Println("NOT GOODLFN since lfn couldn't be found in LFNArray")
 					}
-				} 
-			} 
+				} else {
+					fmt.Println("NOT GOODLFN since lfn couldn't be found LFNArrayRef")
+				}
+			} else {
+				fmt.Println("NOT GOODLFN due to GUID & Events")
+			}
 
 		}
 		if len(goodlfn) > 0 {
@@ -208,7 +214,10 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 				gridJobErrorMessage += i.Details
 				gridJobErrorMessage += "\n****\n "
 
-				fmt.Println("Suspicious replicas found ")
+				fmt.Println("Suspicious replicas found. Find the source data below")
+				log.Println("*****************Source AMQ message of wmarchive*********************")
+				log.Println("\n", string(msg.Body))
+				log.Println("*******************End AMQ message of wmarchive**********************")
 				//fmt.Println(i.Details)
 			} 
 			
