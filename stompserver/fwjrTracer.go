@@ -15,7 +15,6 @@ import (
 	"log"
 	"sync/atomic"
 	"time"
-	"os"
 
 	// stomp library
 	"github.com/go-stomp/stomp"
