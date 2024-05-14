@@ -289,7 +289,7 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 				if Config.EndpointProducer != "" {
 					// TODO: Remove this line later
 					// Skip the messages that doesn't have error messages for debugging
-					if gridJobErrorMessage != "" {
+					if gridJobErrorMessage == "" {
 						continue
 					}
 					err := stompMgr.Send(data, stomp.SendOpt.Header("appversion", "fwjrAMQ"))
