@@ -214,7 +214,7 @@ func FWJRconsumer(msg *stomp.Message) ([]Lfnsite, int64, string, string, error, 
 				gridJobErrorMessage += i.Details
 				gridJobErrorMessage += "\n****\n "
 
-				//fmt.Println("Suspicious replicas found. Find the source data below")
+				fmt.Println("Suspicious replicas found")
 				//log.Println("*****************Source AMQ message of wmarchive*********************")
 				//log.Println("\n", string(msg.Body))
 				//log.Println("*******************End AMQ message of wmarchive**********************")
