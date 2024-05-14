@@ -190,10 +190,11 @@ func traceSender(msg *stomp.Message, topic string) ([]string, error) {
 		return nil, errors.New(fmt.Sprintf("Bad %s message", topic))
 	}
 	for _, s := range sitename {
-		// gridJobErrorMessage is relevant only for fwjr/wmarchive traces
+		// gridJobErrorMessage and clientState are relevant only for fwjr/wmarchive traces
 		// TODO: Check again
 		var gridJobErrorMessage = ""
-		trc := NewTrace(lfn, s, ts, jobtype, wnname, topic, usrdn, gridJobErrorMessage)
+		var clientState = ""
+		trc := NewTrace(lfn, s, ts, jobtype, wnname, topic, usrdn, gridJobErrorMessage, clientState)
 		data, err := json.Marshal(trc)
 		if err != nil {
 			if Config.Verbose > 1 {

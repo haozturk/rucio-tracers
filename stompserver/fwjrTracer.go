@@ -249,6 +249,11 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 	fmt.Println(string(wnname))
 	//fmt.Println("gridJobErrorMessage")
     //fmt.Println(gridJobErrorMessage)	
+	var clientState string
+	clientState = ""
+	if gridJobErrorMessage != "" {
+		clientState = "SUSPICIOUS_FILE"
+	}
 
 
 	if err != nil {
@@ -263,7 +268,7 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 				site = s
 			}
 			for _, glfn := range goodlfn {
-				trc := NewTrace(glfn, site, ts, jobtype, wnname, "fwjr", "unknown", gridJobErrorMessage)
+				trc := NewTrace(glfn, site, ts, jobtype, wnname, "fwjr", "unknown", gridJobErrorMessage, clientState)
 				data, err := json.Marshal(trc)
 				if err != nil {
 					if Config.Verbose > 0 {
