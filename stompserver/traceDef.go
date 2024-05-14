@@ -42,12 +42,15 @@ type Trace struct {
 }
 
 // NewTrace creates a new instance of Rucio Trace.
-func NewTrace(lfn string, site string, ts int64, jobtype string, wnname string, account string, usrdn string, gridJobErrorMessage string) Trace {
+func NewTrace(lfn string, site string, ts int64, jobtype string, wnname string, account string, usrdn string, gridJobErrorMessage string, clientState string) Trace {
 	if account == "" {
 		account = "fwjr"
 	}
 	if usrdn == "" {
 		usrdn = "unknown"
+	}
+	if clientState == "" {
+		clientState = "DONE"
 	}
 	// some of the ts is using milliseconds , such as xrootd data. We fix here to avoid going to each data source
 	if ts > 1000000000000 {
@@ -55,7 +58,7 @@ func NewTrace(lfn string, site string, ts int64, jobtype string, wnname string, 
 	}
 	trc := Trace{
 		Account:            account,
-		ClientState:        "DONE",
+		ClientState:        clientState,
 		Filename:           lfn,
 		DID:                fmt.Sprintf("cms:%s", lfn),
 		EventType:          "get",
