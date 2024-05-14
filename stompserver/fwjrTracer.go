@@ -288,6 +288,11 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 				Traces.Inc()
 				// send data to Stomp endpoint
 				if Config.EndpointProducer != "" {
+					// TODO: Remove this line later
+					// Skip the messages that doesn't have error messages for debugging
+					if gridJobErrorMessage != "" {
+						continue
+					}
 					err := stompMgr.Send(data, stomp.SendOpt.Header("appversion", "fwjrAMQ"))
 					//totaltrace++
 					if err != nil {
@@ -305,10 +310,10 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 		}
 	}
 
-	if gridJobErrorMessage != "" {
+	//if gridJobErrorMessage != "" {
 		// We have what we need. We can exit
-		os.Exit(3)
-	}
+		//os.Exit(3)
+	//}
 
 	return dids, nil
 }
