@@ -279,8 +279,8 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 					continue
 				}
 				if Config.Verbose == 2 {
-					fmt.Printf("data["filename"]: %T\n", data["filename"])
-					fmt.Printf("data["stateReason"]: %T\n", data["stateReason"])
+					fmt.Printf("fn: %T\n", data["filename"])
+					fmt.Printf("sr: %T\n", data["stateReason"])
 					fmt.Printf("dempty sting: %T\n", "")
 					log.Println("********* Rucio trace record ***************")
 						log.Println("\n", string(data))
