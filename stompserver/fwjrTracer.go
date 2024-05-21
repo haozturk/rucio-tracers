@@ -278,23 +278,15 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 					dids = append(dids, fmt.Sprintf("%v", trc.DID))
 					continue
 				}
-				if Config.Verbose == 2 {
-					fmt.Printf("fn: %T\n", trc.Filename)
-					fmt.Printf("sr: %T\n", trc.StateReason)
-					fmt.Printf("dempty sting: %T\n", "")
-					fmt.Printf("fn val: %T\n", trc.Filename)
-					log.Println("********* Rucio trace record ***************")
-						log.Println("\n", string(data))
-						log.Println("******** Done Rucio trace record *************")
-					/*
-					if data["filename"] != "" && data["stateReason"] != "" {
+				if Config.Verbose == 2 {			
+					if trc.Filename != "" && trc.StateReason != "" {
 						log.Println("********* Rucio trace record ***************")
 						log.Println("\n", string(data))
 						log.Println("******** Done Rucio trace record *************")
 					} else {
 						log.Println("Useless trace")
 					}
-					*/
+					
 					
 				}
 				// a good trace made
