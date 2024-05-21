@@ -279,9 +279,14 @@ func FWJRtrace(msg *stomp.Message) ([]string, error) {
 					continue
 				}
 				if Config.Verbose == 2 {
-					log.Println("********* Rucio trace record ***************")
-					log.Println("\n", string(data))
-					log.Println("******** Done Rucio trace record *************")
+					if data["filename"] != "" && data["stateReason"] != "" {
+						log.Println("********* Rucio trace record ***************")
+						log.Println("\n", string(data))
+						log.Println("******** Done Rucio trace record *************")
+					} else {
+						log.Println("Useless trace")
+					}
+					
 				}
 				// a good trace made
 				Traces.Inc()
